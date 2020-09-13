@@ -15,10 +15,13 @@ app.use(express.static("public"));
 
 app.set("view engine", "ejs");
 
-mongoose.connect("mongodb://localhost:27017/notesDB", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(
+  "mongodb+srv://shrey:test123@cluster0.ydsfm.mongodb.net/notesDB",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 
 const noteSchema = new mongoose.Schema({
   title: String,
@@ -64,6 +67,6 @@ app.post("/delete", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log("server at 3000");
 });
