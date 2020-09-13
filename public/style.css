@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
+
+body {
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  background-image: url("shapes.svg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+header {
+  background-color: #0aa3c9;
+  color: #fff;
+}
+
+header h1 {
+  margin: 0;
+  padding: 5px 30px;
+}
+
+header p {
+  margin: 0;
+  padding: 5px 30px;
+  font-size: 1.3rem;
+}
+
+.note {
+  width: 90%;
+  max-width: 615px;
+  margin: 25px auto;
+  padding: 5px;
+  background-color: #f1f2f4;
+  border: 2px solid #d0cfcf;
+  position: relative;
+}
+
+.note .createdOn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 0.7rem;
+  color: #635f5f;
+  font-weight: 700;
+  padding: 3px;
+}
+
+.note .title {
+  overflow-wrap: break-word;
+  margin: 0;
+  padding: 10px 20px;
+  font-size: 1.3rem;
+}
+
+.note .body {
+  overflow-wrap: break-word;
+  margin: 0;
+  padding: 0px 20px 10px;
+}
+
+.delete {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border: none;
+  transition: all 0.1s ease-in;
+  outline: none;
+}
+
+.delete:hover {
+  transform: scale(1.1);
+  color: crimson;
+}
+
+.makeNewNote {
+  display: inline-block;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+}
+
+.makeNewNote,
+.buttonNewNote {
+  text-decoration: none;
+  font-size: 1.2rem;
+  border: 2px solid #d0cfcf;
+  padding: 1.5% 2%;
+  color: #000000;
+  position: relative;
+  transition: all 0.5s ease-in 0.5s;
+  background: transparent;
+}
+
+.makeNewNote::before,
+.makeNewNote::after,
+.buttonNewNote::before,
+.buttonNewNote::after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  background-color: #0aa3c9;
+  border-radius: 50%;
+  top: 50%;
+  opacity: 0;
+  transform: translateY(-50%);
+  transition: all 0.5s ease-in;
+}
+
+.makeNewNote::before,
+.buttonNewNote::before {
+  left: -100px;
+  box-shadow: -50px 0 0 0 #0aa3c9;
+}
+
+.makeNewNote::after,
+.buttonNewNote::after {
+  right: -100px;
+  box-shadow: 50px 0 0 0 #0aa3c9;
+}
+
+.makeNewNote:hover:before,
+.buttonNewNote:hover:before {
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  box-shadow: -25px 0 0 0 #0aa3c9;
+  opacity: 1;
+}
+
+.makeNewNote:hover:after,
+.buttonNewNote:hover:after {
+  right: 50%;
+  transform: translateX(50%) translateY(-50%);
+  box-shadow: 25px 0 0 0 #0aa3c9;
+  opacity: 1;
+}
+
+.makeNewNote:hover,
+.buttonNewNote:hover {
+  background-color: #0aa3c9;
+  color: #fff;
+}
+
+.createNewNote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.createNewNote input {
+  height: 40px;
+  width: 90%;
+  max-width: 400px;
+  margin: 50px auto 20px;
+  background-color: #fff;
+  border: 2px solid #d0cfcf;
+  border-radius: 10px;
+  outline: none;
+  color: #0c0b0b;
+}
+
+.createNewNote input:nth-child(2) {
+  height: 100px;
+}
+
+input::placeholder {
+  font-size: 18px;
+  padding-left: 10px;
+  color: #d0cfcf;
+  opacity: 0.4;
+}

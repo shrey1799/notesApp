@@ -1,0 +1,25 @@
+<%- include("header") -%>
+
+<main>
+  <% results.forEach(function(note){ %>
+  <form action="/delete" method="POST" class="note">
+    <span class="createdOn">
+      created <%= moment(note.created_at).fromNow(true) %> ago
+    </span>
+    <p class="title"><%= note.title %></p>
+    <p class="body"><%= note.body %></p>
+    <button
+      class="delete"
+      type="submit"
+      name="deleteNote"
+      value="<%= note._id %>"
+    >
+      <i class="fas fa-trash"></i>
+    </button>
+  </form>
+  <% }); %>
+
+</main>
+
+<a class="makeNewNote" href="/addNote">Add Note </a>
+<%- include("footer") -%>

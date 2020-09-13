@@ -1,0 +1,12 @@
+<%-  include("header") -%>
+
+
+    <form action="/addNote" method="post">
+      <div class="createNewNote">
+        <input type="text" name="noteTitle" placeholder="note title" autocomplete="off" />
+        <input type="text" name="noteBody" placeholder="note body" autocomplete="off" />
+        <button class="buttonNewNote" type="submit">Make note</button>
+      </div>
+    </form>
+
+    <%-  include("footer") -%>
